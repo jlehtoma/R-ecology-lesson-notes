@@ -25,6 +25,6 @@ knitr::opts_chunk$set(results='hide', fig.path='img/r-lesson-')
 | 05 Visualization ggplot2 | 75      | 13:00 - 14:15     | +15 min to the orginal length    |
 | **Afternoon coffee**     | **15**  | **14:15 - 14:30** |                                  |
 | 06 R and SQL             | 40      | 14:30 - 15:10     |                                  |
-| 07 Literate programming  | 60      | 15:10 - 16:10     | Extra                            |
+| 07 Literate programming  | 60      | 15:10 - 16:10     | MAYBE                            |
 
 
