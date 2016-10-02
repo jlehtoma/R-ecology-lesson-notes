@@ -1,0 +1,117 @@
+---
+layout: topic
+title: Day schedule
+author: Data Carpentry contributors
+minutes: 15
+---
+
+```{r, echo=FALSE, purl=FALSE}
+knitr::opts_chunk$set(results='hide', fig.path='img/r-lesson-')
+```
+
+------------
+ 
+## 1. Introduce 
+	
+### Instructors
+
++ Adam Obeng
++ Joona Lehtomäki 
+
+### Host
+
++ Dominique Roche
+
+### Helpers
+
++ Dominique Roche
++ Sandra Binning
++ Jean-Marc Freyermuth
+
+## 2. Introduce what Data Carpentry is about
+
++ Manage expectations -> what DC is *not* about
+
+## 3. How the workshop works (practices)
+
+### Code of Conduct
+
+http://www.datacarpentry.org/code-of-conduct/
+
+We are committed to creating a friendly and respectful place for learning, 
+teaching and contributing. All participants in Data Carpentry events or 
+communications are expected to show respect and courtesy to others.
+
+### Sticky notes.
+
+We give each learner two sticky notes of different colors,e.g., red and green. 
+These can be held up for voting, but their real use is as status flags.
+If someone has completed an exercise and wants it checked, they put the green 
+sticky note on their laptop; if they run into a problem and need help, the put 
+up the red one. This is better than having people raise their hands because:
+
+* it's more discreet (which means they're more likely to actually do it),
+* they can keep working while their flag is raised, and
+* the instructor can quickly see from the front of the room what state the class 
+is in.
+
+### Minute cards.
+
+As explained [yesterday]({{ page.root }}/06-summarize/), we also use sticky 
+notes as minute cards: before each coffee or meal break, learners take a minute 
+to write one positive thing on the green sticky note (e.g., one thing they've 
+learned that they think will be useful), and one thing they found too fast, too 
+slow, confusing, or irrelevant on the red one.  They can use the red sticky 
+note for questions that haven't yet been answered.  It only takes a few minutes 
+to cluster these, and allows the instructors to adjust to learners' interests 
+and speed.
+
+### One up, one down. 
+
+We frequently also ask for summary feedback at the end of each day. The 
+instructors ask the learners to alternately give one positive and one negative 
+point about the day, without repeating anything that has already been said. 
+This requirement forces people to say things they otherwise might not: once 
+all the "safe" feedback has been given, participants will start saying what 
+they really think.
+
+Minute cards are anonymous; the alternating up-and-down feedback is not.
+Each mode has its strengths and weaknesses, and by providing both, we hope 
+to get the best of both worlds.
+
+### Collaborative note-taking.
+
+We often use [Etherpad][etherpad] for collaborative note-taking and to share 
+snippets of code and small data files with learners. (If nothing else, it 
+saves us from having to ask students to copy long URLs from the presenter's 
+screen to their computers.) It is almost always mentioned positively in 
+post-workshop feedback, and several workshop participants have started using 
+it in their own teaching.
+
+One of the advantages of collaborative note-taking is that it gives the more 
+advanced learners in the class something useful to do. Another is that the 
+notes the learners take are usually more helpful *to them* than those the 
+instructor would prepare in advance, since the learners are more likely to 
+write down what they actually found new, rather than what the instructor 
+predicted would be new.
+
+Finally, scanning the Etherpad is a good way for an instructor to discover 
+that class didn't hear something important, or misunderstood it.
+
+### Pair programming.
+
+Pairing is a good practice in real life, and also [a good way to teach]({{ page.root }}/files/papers/porter-what-works-2013.pdf). Partners can not only help each 
+other out during the practical, but can also clarify each other's 
+misconceptions when the solution is presented, and discuss common research 
+interests during breaks. To facilitate this, we strongly prefer flat 
+(dinner-style) seating to banked (theater-style) seating; this also 
+makes it easier for helpers to reach learners who need assistance.
+
+When pair programming is used it's important to put *everyone* in pairs, 
+not just the learners who are struggling, so that no one feels singled 
+out. It's also useful to have people sit in new places (and hence pair 
+with different partners) after each coffee or meal break.
+
+## 4. Schedule for the coming days
+
+## 5. Have everyone introduce themselves to their neighbours
