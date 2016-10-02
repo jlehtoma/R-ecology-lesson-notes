@@ -6,19 +6,21 @@ minutes: 30
 ---
 
 ```{r, echo=FALSE, purl=FALSE, message = FALSE}
-#source("setup.R")
+source("setup.R")
 surveys <- read.csv("data/portal_data_joined.csv")
+```
+
+```{r, echo=FALSE, purl=TRUE}
+## The data.frame class
 ```
 
 ------------
 
-**TARGET TIME: 30 min**
-
-## Learning Objectives surveys
-
-* understand the concept of a `data.frame`
-* use sequences
-* know how to access any element of a `data.frame`
+> ## Learning Objectives
+>
+> * understand the concept of a `data.frame`
+> * use sequences
+> * know how to access any element of a `data.frame`
 
 ------------
 

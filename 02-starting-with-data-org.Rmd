@@ -5,20 +5,18 @@ author: Data Carpentry contributors
 minutes: 20
 ---
 
-```{r, echo=FALSE, eval=FALSE, purl=FALSE, message = FALSE}
+```{r, echo=FALSE, purl=FALSE, message = FALSE}
 source("setup.R")
 ```
 
 ------------
 
-**TARGET TIME: 20 min**
-
-## Learning Objectives
-
-* load external data (CSV files) in memory using the survey table
- (`surveys.csv`) as an example
-* explore the structure and the content of a data frame in R
-* understand what factors are and how to manipulate them
+> ## Learning Objectives
+>
+> * load external data (CSV files) in memory using the survey table
+>  (`surveys.csv`) as an example
+> * explore the structure and the content of a data frame in R
+> * understand what factors are and how to manipulate them
 
 ------------
 
@@ -65,18 +63,22 @@ You are now ready to load the data:
 surveys <- read.csv('data/portal_data_joined.csv')
 ```
 
-**No output** produced.
+This statement doesn't produce any output because, as you might recall,
+assignment doesn't display anything. If we want to check that our data has been
+loaded, we can print the variable's value: `surveys`.
 
-Print out typing `surveys`.
-
-A lot of stuff -> use `head()`
-
+Wow... that was a lot of output. At least it means the data loaded
+properly. Let's check the top (the first 6 lines) of this `data.frame` using the
+function `head()`:
 
 ```{r, results='show', purl=FALSE}
 head(surveys)
 ```
 
-This is a `data.frame`. Tabular format where all columns must have the same data type. 
+A `data.frame` is the representation of data in the format of a table where the
+columns are vectors that all have the same length. Because each column is a
+vector, they all contain the same type of data. We can see this when inspecting
+the __str__ucture of a `data.frame` with the function `str()`:
 
 ```{r, purl=FALSE}
 str(surveys)
@@ -89,6 +91,26 @@ Based on the output of `str(surveys)`, can you answer the following questions?
 * What is the class of the object `surveys`?
 * How many rows and how many columns are in this object?
 * How many species have been recorded during these surveys?
+
+```{r, echo=FALSE, purl=TRUE}
+
+## Challenge
+## Based on the output of `str(surveys)`, can you answer the following questions?
+## * What is the class of the object `surveys`?
+## * How many rows and how many columns are in this object?
+## * How many species have been recorded during these surveys?
+
+```
+
+<!---
+```{r, echo=FALSE, purl=FALSE}
+## Answers
+##
+## * class: data frame
+## * how many rows: 34786,  how many columns: 13
+## * how many species: 48
+```
+--->
 
 As you can see, many of the columns consist of integers, however, the columns
 `species` and `sex` are of a special class called a `factor`. Before we learn
