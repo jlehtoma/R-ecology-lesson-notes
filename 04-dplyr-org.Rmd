@@ -5,7 +5,7 @@ author: Data Carpentry contributors
 ---
 
 ```{r, echo=FALSE, purl=FALSE, message = FALSE}
-source("setup.R")
+#source("setup.R")
 surveys <- read.csv("data/portal_data_joined.csv")
 ```
 
@@ -74,7 +74,7 @@ We're going to learn some of the most common `dplyr` functions: `select()`,
 data frame, use `select()`. The first argument to this function is the data
 frame (`surveys`), and the subsequent arguments are the columns to keep.
 
-```{r, results = 'hide', purl = FALSE}
+```{r, results = 'hide', eval=FALSE, purl = FALSE}
 select(surveys, plot_id, species_id, weight)
 ```
 
