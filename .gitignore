@@ -18,3 +18,9 @@
 *.swp
 /data/
 /portalR.db
+
+# Jekyll
+_site/
+
+data_output/
+libs/
