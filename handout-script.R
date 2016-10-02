@@ -1,6 +1,5 @@
 
-
-
+\n
 ### Creating objects in R
 
 ### Vectors and data types
@@ -23,8 +22,7 @@
 ## ## Can you draw a diagram that represents the hierarchy of the data
 ## ## types?
 # * Can you figure out why `"four" > "five"` returns `TRUE`?
-
-
+\n
 ### Presentation of the survey data
 ## download.file("https://ndownloader.figshare.com/files/2292169",
 ##               "data/portal_data_joined.csv")
@@ -49,18 +47,18 @@ f <- factor(c(1, 5, 10, 2))
 as.numeric(f)               ## wrong! and there is no warning...
 as.numeric(as.character(f)) ## works...
 as.numeric(levels(f))[f]    ## The recommended way.
-## Challenge
-##
-## * In which order are the treatments listed?
-##
-## * How can you recreate this plot with "control" listed
-## last instead of first?
-exprmt <- factor(c("treat1", "treat2", "treat1", "treat3", "treat1", "control",
-                   "treat1", "treat2", "treat3"))
-table(exprmt)
-barplot(table(exprmt))
+## The function `plot()` can be used to quickly create a bar plot of a factor.
+## For instance, for a factor
+exprmt <- factor(c("treat1", "treat2", "treat1", "treat3", "treat1",
+		   "control", "treat1", "treat2", "treat3"))
+## the code `plot(exprmt)`
+## gives you a barplot of the number of observations, as shown below.
 
-
+## * What determines the order in which the treatments are listed in the plot?
+## * How can you recreate this plot with "control" listed last instead
+## of first?
+plot(exprmt)
+\n
 ## The data.frame class
 ## Compare the output of these examples, and compare the difference between when
 ## the data are being read as `character`, and when they are being read as
@@ -111,8 +109,6 @@ str(example_data)
 ### 4. Now that you've seen how `nrow()` can be used to stand in for a row index, let's combine
 ###   that behavior with the `-` notation above to reproduce the behavior of `head(surveys)`
 ###   excluding the 7th through final row of the `surveys` dataset.
+\n
 
-
-
-
-
+\n
