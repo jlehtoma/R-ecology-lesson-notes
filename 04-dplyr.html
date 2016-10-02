@@ -135,11 +135,12 @@ $(document).ready(function () {
 <li>Export data with write.csv()</li>
 </ul>
 <hr />
-<div id="data-manipulation-using-dplyr" class="section level1">
-<h1>Data Manipulation using dplyr</h1>
+<div id="data-manipulation-using-dplyr-and-tidyr" class="section level1">
+<h1>Data Manipulation using dplyr and tidyr</h1>
 <ul>
 <li>Why <code>dplyr</code> instead of the normal subsetting?</li>
 <li>Re-introduce the concept of <strong>packages</strong></li>
+<li>Later, re-visit the idea of <strong>tidy data</strong></li>
 </ul>
 <div id="install-and-load-packages" class="section level2">
 <h2>Install and load packages</h2>
@@ -434,13 +435,68 @@ surveys_hindfoot_half &lt;- surveys %&gt;%
 </div>
 </div>
 </div>
-<div id="answer" class="section level2">
-<h2>Answer</h2>
+<div id="tidying-data-with-tidyr" class="section level2">
+<h2>Tidying data with tidyr</h2>
+<p><a href="http://blog.rstudio.org/2014/07/22/introducing-tidyr/">tidyr</a> is new package that makes it easy to “tidy” your data. Tidy data is data that’s easy to work with: it’s easy to munge (with <code>dplyr</code>), visualise (with <code>ggplot2</code>) and model (with R’s hundreds of modelling packages). The two most important properties of tidy data are:</p>
+<ul>
+<li>Each column is a variable.</li>
+<li>Each row is an observation.</li>
+<li>What was tidy data again? <a href="http://bit.ly/2015-11-10-idiv-dplyr-tidyr">Slides about tidyr and dplyr</a></li>
+</ul>
+<div id="messing-up-the-data-creating-a-pivot-table" class="section level3">
+<h3>Messing up the data: creating a pivot table</h3>
+<p>First, let’s count the number of species observed per year.</p>
+<pre class="r"><code>species_yearly &lt;- surveys %&gt;%
+  select(species_id, year) %&gt;% 
+  filter(species_id != &quot;&quot;) %&gt;% 
+  group_by(species_id, year) %&gt;% 
+  summarize(
+    count = n()
+  )</code></pre>
+<ul>
+<li><code>spread()</code>: Spread a key-value pair across multiple columns.</li>
+<li>Next, let’s tell <code>spread()</code> we want to use column <code>year</code> as a key and <code>count</code> as a value. T</li>
+</ul>
+<pre class="r"><code>library(&quot;tidyr&quot;)    ## load the package
+
+species_yearly_pivot &lt;- species_yearly %&gt;%   
+  spread(year, count)</code></pre>
+<p>Having those NAs is a bit annoying, so let’s call them 0:</p>
+<pre class="r"><code>species_yearly_pivot &lt;- species_yearly %&gt;%   
+  spread(year, count, fill = 0)</code></pre>
+<p>Can we combine <code>tidyr</code> functions with <code>dplyr</code>? Yes we can:</p>
+<pre class="r"><code>species_yearly_pivot &lt;- surveys %&gt;%
+  select(species_id, year) %&gt;% 
+  filter(species_id != &quot;&quot;) %&gt;% 
+  group_by(species_id, year) %&gt;% 
+  summarize(
+    count = n()
+  ) %&gt;% 
+  spread(year, count, fill = 0)</code></pre>
+<p>Pivot tables may be useful for inspecting the data with quick glance, but not much else. With another function from <code>tidyr</code>, <code>gather()</code>, we can quickly transform the pivot table back to tidy data. <code>gather()</code> takes multiple columns and collapses into key-value pairs, duplicating all other columns as needed. You use <code>gather()</code> when you notice that you have columns that are not variables.</p>
+<pre class="r"><code>species_yearly_tidy &lt;- species_yearly_pivot %&gt;% 
+  gather(year, count, -species_id) </code></pre>
+<blockquote>
+<h3 id="challenge-5" class="challenge">Challenge</h3>
+<p>Download a messy version of the surveys data and see how you could tidy it up using the tools from tidyr-package.</p>
+</blockquote>
+<pre class="r"><code># Don't usually do this!
+download.file(&quot;http://bit.ly/dc-messy-data&quot;, &quot;data/messy_survey_data.csv&quot;)</code></pre>
+<pre class="r"><code>messy_survey_data &lt;- read.csv(&quot;data/messy_survey_data.csv&quot;)
+head(messy_survey_data)</code></pre>
+<pre><code>##   record_id species_id      date sex        variable measurement
+## 1         1         NL 1977-7-16   M hindfoot_length          32
+## 2         1         NL 1977-7-16   M          weight          NA
+## 3         2         NL 1977-7-16   M hindfoot_length          33
+## 4         2         NL 1977-7-16   M          weight          NA
+## 5         3         DM 1977-7-16   F hindfoot_length          37
+## 6         3         DM 1977-7-16   F          weight          NA</code></pre>
+</div>
 </div>
 </div>
 <div id="exporting-data" class="section level1">
 <h1>Exporting data</h1>
-<p>Now that you have learned how to use <code>dplyr</code> to extract the information you need from the raw data, or to summarize your raw data, you may want to export these new datasets to share them with your collaborators or for archival.</p>
+<p>Now that you have learned how to use <code>dplyr</code> and <code>tidyr</code> to extract the information you need from the raw data, or to summarize your raw data, you may want to export these new datasets to share them with your collaborators or for archival.</p>
 <p>Similarly to the <code>read.csv()</code> function used to read in CSV into R, there is a <code>write.csv()</code> function that generates CSV files from data frames.</p>
 <p>Before using it, we are going to create a new folder, <code>data_output</code> in our working directory that will store this generated dataset. We don’t want to write generated datasets in the same directory as our raw data. It’s good practice to keep them separate. The <code>data</code> folder should only contain the raw, unaltered data, and should be left alone to make sure we don’t delete or modify it; on the other end the content of <code>data_output</code> directory will be generated by our script, and we know that we can delete the files it contains because we have the script that can re-generate these files.</p>
 <p>In preparation for our next lesson on plotting, we are going to prepare a cleaned up version of the dataset that doesn’t include any missing data.</p>

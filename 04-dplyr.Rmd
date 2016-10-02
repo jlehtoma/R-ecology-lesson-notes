@@ -25,10 +25,11 @@ surveys <- read.csv("data/portal_data_joined.csv")
 
 ------------
 
-# Data Manipulation using dplyr
+# Data Manipulation using dplyr and tidyr
 
 + Why `dplyr` instead of the normal subsetting?
 + Re-introduce the concept of **packages**
++ Later, re-visit the idea of **tidy data**
 
 
 ## Install and load packages
@@ -312,8 +313,8 @@ surveys %>%
 > What was the heaviest animal measured in each year? Return the columns `year`,
 > `genus`, `species_id`, and `weight`.
 
-## Answer
 ```{r, echo=FALSE, purl=FALSE}
+## Answer
 res <- surveys %>%
     filter(!is.na(weight)) %>%
     group_by(year) %>%
@@ -322,11 +323,99 @@ res <- surveys %>%
     arrange(year)
 ```
 
+## Tidying data with tidyr
+
+[tidyr](http://blog.rstudio.org/2014/07/22/introducing-tidyr/) is new package 
+that makes it easy to "tidy" your data. Tidy data is data that's easy to work 
+with: it's easy to munge (with `dplyr`), visualise (with `ggplot2`) 
+and model (with R’s hundreds of modelling packages). The two most important 
+properties of tidy data are:
+
+* Each column is a variable.
+* Each row is an observation.
+* What was tidy data again? [Slides about tidyr and dplyr](http://bit.ly/2015-11-10-idiv-dplyr-tidyr)
+
+### Messing up the data: creating a pivot table
+
+First, let's count the number of species observed per year.
+
+```{r purl=FALSE}
+species_yearly <- surveys %>%
+  select(species_id, year) %>% 
+  filter(species_id != "") %>% 
+  group_by(species_id, year) %>% 
+  summarize(
+    count = n()
+  )
+```
+
++ `spread()`: Spread a key-value pair across multiple columns.
++ Next, let's tell `spread()` we want to use column `year` as a key and
+`count` as a value. T
+
+```{r purl=FALSE}
+library("tidyr")    ## load the package
+
+species_yearly_pivot <- species_yearly %>%   
+  spread(year, count)
+```
+
+Having those NAs is a bit annoying, so let's call them 0:
+
+```{r purl=FALSE}
+species_yearly_pivot <- species_yearly %>%   
+  spread(year, count, fill = 0)
+```
+
+Can we combine `tidyr` functions with `dplyr`? Yes we can:
+
+```{r purl=FALSE}
+species_yearly_pivot <- surveys %>%
+  select(species_id, year) %>% 
+  filter(species_id != "") %>% 
+  group_by(species_id, year) %>% 
+  summarize(
+    count = n()
+  ) %>% 
+  spread(year, count, fill = 0)
+```
+
+Pivot tables may be useful for inspecting the data with quick glance,
+but not much else. With another function from `tidyr`, `gather()`, we can quickly
+transform the pivot table back to tidy data. `gather()` takes multiple columns and 
+collapses into key-value pairs, duplicating all other columns as needed. You use 
+`gather()` when you notice that you have columns that are not variables.
+
+```{r purl=FALSE}
+species_yearly_tidy <- species_yearly_pivot %>% 
+  gather(year, count, -species_id) 
+```
+
+> ### Challenge {.challenge}
+>
+> Download a messy version of the surveys data and see how you could 
+> tidy it up using the tools from tidyr-package.
+
+```{r, eval=FALSE}
+# Don't usually do this!
+download.file("http://bit.ly/dc-messy-data", "data/messy_survey_data.csv")
+```
+```{r, eval=TRUE}
+messy_survey_data <- read.csv("data/messy_survey_data.csv")
+head(messy_survey_data)
+```
+
+```{r, echo=FALSE, purl=FALSE}
+## Answer
+tidy_survey_data <- messy_survey_data %>% 
+  spread(variable, measurement)
+```
+
 # Exporting data
 
-Now that you have learned how to use `dplyr` to extract the information you need
-from the raw data, or to summarize your raw data, you may want to export these
-new datasets to share them with your collaborators or for archival.
+Now that you have learned how to use `dplyr` and `tidyr` to extract the information 
+you need from the raw data, or to summarize your raw data, you may want to export 
+these new datasets to share them with your collaborators or for archival.
 
 Similarly to the `read.csv()` function used to read in CSV into R, there is a
 `write.csv()` function that generates CSV files from data frames.
