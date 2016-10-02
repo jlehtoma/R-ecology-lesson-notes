@@ -1,7 +1,5 @@
 
 \n
-### Creating objects in R
-
 ### Vectors and data types
 ## ## We’ve seen that atomic vectors can be of type character, numeric, integer, and
 ## ## logical. But what happens if we try to mix these types in a single
@@ -26,13 +24,6 @@
 ### Presentation of the survey data
 ## download.file("https://ndownloader.figshare.com/files/2292169",
 ##               "data/portal_data_joined.csv")
-
-## Challenge
-## Based on the output of `str(surveys)`, can you answer the following questions?
-## * What is the class of the object `surveys`?
-## * How many rows and how many columns are in this object?
-## * How many species have been recorded during these surveys?
-
 ### Factors
 sex <- factor(c("male", "female", "female", "male"))
 food <- factor(c("low", "high", "medium", "high", "low", "medium", "high"))
@@ -59,7 +50,6 @@ exprmt <- factor(c("treat1", "treat2", "treat1", "treat3", "treat1",
 ## of first?
 plot(exprmt)
 \n
-## The data.frame class
 ## Compare the output of these examples, and compare the difference between when
 ## the data are being read as `character`, and when they are being read as
 ## `factor`.
