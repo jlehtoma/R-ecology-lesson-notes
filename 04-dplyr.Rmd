@@ -74,7 +74,7 @@ select(surveys, plot_id, species_id, weight)
 
 To choose rows, use `filter()`:
 
-```{r, purl = FALSE}
+```{r, eval=FALSE, purl = FALSE}
 filter(surveys, year == 1995)
 ```
 
@@ -140,7 +140,7 @@ columns. For this we'll use `mutate()`.
 
 To create a new column of weight in kg:
 
-```{r, purl = FALSE}
+```{r, eval = FALSE, purl = FALSE}
 surveys %>%
   mutate(weight_kg = weight / 1000)
 ```
