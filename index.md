@@ -43,13 +43,24 @@ for each level and a very brief introduction to plotting.
 
 ## Lessons:
 
-1. [Lesson 00 Before we start](00-before-we-start.html)
-2. [Lesson 01 Introduction to R](01-intro-to-R.html)
-3. [Lesson 02 Starting with data](02-starting-with-data.html)
-4. [Lesson 03 Introducing `data.frame`](03-data-frames.html)
-5. [Lesson 04 Aggregating and analyzing data with dplyr](04-dplyr.html)
-6. [Lesson 05 Data visualization with ggplot2](05-visualization-ggplot2.html)
-7. [Lesson 06 R and SQL](06-r-and-sql.html)
+<button class="btn btn-large btn-block" type="button">
+  [Lesson 00 Before we start](00-before-we-start.html)
+</button>
+<button class="btn btn-large btn-block" type="button">
+  [Lesson 01 Introduction to R](01-intro-to-R.html)
+</button>
+<button class="btn btn-large btn-block" type="button">
+  [Lesson 02 Starting with data](02-starting-with-data.html)
+</button>
+<button class="btn btn-large btn-block" type="button">
+  [Lesson 03 Introducing `data.frame`](03-data-frames.html)
+</button>
+<button class="btn btn-large btn-block" type="button">
+  [Lesson 04 Aggregating and analyzing data with dplyr](04-dplyr.html)
+</button>
+<button class="btn btn-large btn-block" type="button">
+  [Lesson 05 Data visualization with ggplot2](05-visualization-ggplot2.html)
+</button>
 
 
 ## Data
