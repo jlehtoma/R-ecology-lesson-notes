@@ -126,11 +126,12 @@ $(document).ready(function () {
 <p><strong>TARGET TIME: 75 min</strong></p>
 <p>## Learning Objectives</p>
 <ul>
-<li>Learn basic utilities of the dplyr package</li>
+<li>Learn basic utilities of the dplyr and tidyr package</li>
 <li>Select and filter data</li>
 <li>Be able to use magrittr pipes</li>
 <li>Create new columns with mutate()</li>
 <li>Use the split-apply-combine paradigm to summarize data</li>
+<li>Use basic utilities in tidyr to work with tidy data</li>
 <li>Export data with write.csv()</li>
 </ul>
 <hr />
@@ -212,15 +213,10 @@ surveys_sml</code></pre>
 <h3 id="challenge" class="challenge">Challenge</h3>
 <p>Using pipes, subset the data to include individuals collected before 1995, and retain the columns <code>year</code>, <code>sex</code>, and <code>weight.</code></p>
 </blockquote>
-<!---
-
-```r
-## Answer
-surveys %>%
-    filter(year < 1995) %>%
-    select(year, sex, weight)
-```
---->
+<pre class="r"><code>## Answer
+surveys %&gt;%
+    filter(year &lt; 1995) %&gt;%
+    select(year, sex, weight)</code></pre>
 <div id="mutate" class="section level3">
 <h3>Mutate</h3>
 <p>Frequently you’ll want to create new columns based on the values in existing columns, for example to do unit conversions, or find the ratio of values in two columns. For this we’ll use <code>mutate()</code>.</p>
@@ -270,17 +266,12 @@ surveys %>%
 <p>Create a new dataframe from the survey data that meets the following criteria: contains only the <code>species_id</code> column and a column that contains values that are half the <code>hindfoot_length</code> values (e.g. a new column <code>hindfoot_half</code>). In this <code>hindfoot_half</code> column, there are no NA values and all values are &lt; 30.</p>
 <p><strong>Hint</strong>: think about how the commands should be ordered to produce this data frame!</p>
 </blockquote>
-<!---
-
-```r
-## Answer
-surveys_hindfoot_half <- surveys %>%
-    filter(!is.na(hindfoot_length)) %>%
-    mutate(hindfoot_half = hindfoot_length / 2) %>%
-    filter(hindfoot_half < 30) %>%
-    select(species_id, hindfoot_half)
-```
---->
+<pre class="r"><code>## Answer
+surveys_hindfoot_half &lt;- surveys %&gt;%
+    filter(!is.na(hindfoot_length)) %&gt;%
+    mutate(hindfoot_half = hindfoot_length / 2) %&gt;%
+    filter(hindfoot_half &lt; 30) %&gt;%
+    select(species_id, hindfoot_half)</code></pre>
 </div>
 <div id="split-apply-combine-data-analysis-and-the-summarize-function" class="section level3">
 <h3>Split-apply-combine data analysis and the summarize() function</h3>
@@ -343,7 +334,7 @@ surveys_hindfoot_half <- surveys %>%
   filter(!is.na(weight)) %&gt;%
   group_by(sex, species_id) %&gt;%
   summarize(mean_weight = mean(weight)) %&gt;%
-  print(n=15)</code></pre>
+  print(n = 15)</code></pre>
 <pre><code>## Source: local data frame [64 x 3]
 ## Groups: sex [?]
 ## 
@@ -422,12 +413,9 @@ surveys_hindfoot_half <- surveys %>%
 <h3 id="challenge-3" class="challenge">Challenge</h3>
 <p>Use <code>group_by()</code> and <code>summarize()</code> to find the mean, min, and max hindfoot length for each species (using <code>species _id</code>).</p>
 </blockquote>
-<!---
-
-```
-## # A tibble: 25 × 4
+<pre><code>## # A tibble: 25 × 4
 ##    species_id mean_hindfoot_length min_hindfoot_length max_hindfoot_length
-##        <fctr>                <dbl>               <int>               <int>
+##        &lt;fctr&gt;                &lt;dbl&gt;               &lt;int&gt;               &lt;int&gt;
 ## 1          AH             33.00000                  31                  35
 ## 2          BA             13.00000                   6                  16
 ## 3          DM             35.98235                  16                  50
@@ -438,19 +426,16 @@ surveys_hindfoot_half <- surveys %>%
 ## 8          OT             20.26741                  13                  50
 ## 9          OX             19.12500                  13                  21
 ## 10         PB             26.11592                   2                  47
-## # ... with 15 more rows
-```
---->
+## # ... with 15 more rows</code></pre>
 <blockquote>
 <h3 id="challenge-4" class="challenge">Challenge</h3>
 <p>What was the heaviest animal measured in each year? Return the columns <code>year</code>, <code>genus</code>, <code>species_id</code>, and <code>weight</code>.</p>
 </blockquote>
-<!---
-## Answer
-
---->
 </div>
 </div>
+</div>
+<div id="answer" class="section level2">
+<h2>Answer</h2>
 </div>
 </div>
 <div id="exporting-data" class="section level1">
