@@ -1,0 +1,30 @@
+---
+layout: topic
+title: Day schedule
+author: Data Carpentry contributors
+minutes: 15
+---
+
+```{r, echo=FALSE, purl=FALSE}
+knitr::opts_chunk$set(results='hide', fig.path='img/r-lesson-')
+```
+
+------------
+
+## Day 2: Approximate schedule
+
+| Item                     | Minutes | Approx. time      | Notes                            |
+|--------------------------|---------|-------------------|----------------------------------|
+| 00 Before we start       | 15      | 09:00 - 09:15     |                                  |
+| 01 Intro to R            | 30      | 09:15 - 09:45     | -15 min from the original length |
+| 02 Starting with data    | 20      | 09:45 - 10:05     |                                  |
+| 03 Dataframes            | 25      | 10:05 - 10:30     | -5 min from the original length  |
+| **Morning coffee**       | **15**  | **10:30 - 10:45** |                                  |
+| 04 dplyr + tidyr         | 75      | 10:45 - 12:00     |                                  |
+| **Lunch**                | **60**  | **12:00 - 13:00** |                                  |
+| 05 Visualization ggplot2 | 75      | 13:00 - 14:15     | +15 min to the orginal length    |
+| **Afternoon coffee**     | **15**  | **14:15 - 14:30** |                                  |
+| 06 R and SQL             | 40      | 14:30 - 15:10     |                                  |
+| 07 Literate programming  | 60      | 15:10 - 16:10     | Extra                            |
+
+
