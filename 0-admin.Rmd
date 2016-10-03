@@ -11,6 +11,8 @@ knitr::opts_chunk$set(results='hide', fig.path='img/r-lesson-')
 
 ------------
  
+## 0. Introduce Etherpad
+ 
 ## 1. Introduce 
 	
 ### Instructors
@@ -129,4 +131,6 @@ with different partners) after each coffee or meal break.
 
 ## 4. Schedule for the coming days
 
-## 5. Have everyone introduce themselves to their neighbours
+## 5. Ask about photos and tweeting
+
+## 6. Have everyone introduce themselves to their neighbours
