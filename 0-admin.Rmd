@@ -28,7 +28,7 @@ knitr::opts_chunk$set(results='hide', fig.path='img/r-lesson-')
 
 + Dominique Roche
 + Sandra Binning
-+ Jean-Marc Freyermuth
++ Christof Neumann
 
 ## 2. Introduce what Data Carpentry is about
 
