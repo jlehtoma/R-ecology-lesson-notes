@@ -60,7 +60,9 @@ Challenge 2.2
 
 he function `plot()` can be used to quickly create a bar plot of a factor. For instance, for the factor
 
-`exprmt <- factor(c("treat1", "treat2", "treat1", "treat3", "treat1", "control", "treat1", "treat2", "treat3"))`,
+```r
+exprmt <- factor(c("treat1", "treat2", "treat1", "treat3", "treat1", "control", "treat1", "treat2", "treat3"))
+```
 
 the code `plot(exprmt)` gives you a barplot of the number of observations at each level, as shown
 below.
