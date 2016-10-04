@@ -65,7 +65,7 @@ example_data <- data.frame(animal=c("dog", "cat", "sea cucumber", "sea urchin"),
 str(example_data)
 ```
 
-### Challenge
+### Challenge 3.1.1 SHOW
 
 1. There are a few mistakes in this hand crafted `data.frame`, can you spot and
 fix them? Don't hesitate to experiment!
@@ -247,7 +247,7 @@ they can have dangerous consequences, and are best avoided. Besides, with
 auto-completion in RStudio, you rarely have to type more than a few characters
 to get the full and correct column name.
 
-### Challenge
+### Challenge 3.2 SHOW
 
 1. The function `nrow()` on a `data.frame` returns the number of rows. Use it,
    in conjunction with `seq()` to create a new `data.frame` called

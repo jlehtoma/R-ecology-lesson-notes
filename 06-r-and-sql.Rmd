@@ -111,7 +111,7 @@ result <-  dbGetQuery(conn, q)
 head(result)
 ```
 
-> ## Challenge
+> ## Challenge 6.1 SHOW
 >
 >  1. Write a query that returns counts of genus by `plot_id`
 >  2. You can join multiple tables together in SQL using the following syntax
@@ -224,7 +224,7 @@ being written to disk. Not only does R and RSQLite provide easy ways to query
 existing databases, it also allows you to easily create your own databases from
 flat files.
 
-> ## Challenge
+> ## Challenge 6.2 SHOW
 >
 > Add the remaining tables to the existing database. Open the new database
 > using the Firefox SQLite manager to verify that the database was built

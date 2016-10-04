@@ -147,7 +147,7 @@ Notice how the boxplot layer is behind the jitter layer? What do you need to
 change in the code to put the boxplot in front of the points such that it's not
 hidden.
 
-> ### Challenges
+> ### Challenge 5.1 SHOW
 >
 > Boxplots are useful summaries, but hide the *shape* of the distribution. For
 > example, if there is a bimodal distribution, this would not be observed with a
@@ -253,7 +253,7 @@ ggplot(data = yearly_sex_counts, aes(x = year, y = n, color = sex, group = sex))
 ```
 
 
-## Challenge
+## Challenge 5.2 SHOW
 
 > Use what you just learned to create a plot that depicts how the average weight
 > of each species changes through the years.

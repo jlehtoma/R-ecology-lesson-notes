@@ -82,7 +82,7 @@ This is a `data.frame`. Tabular format where all columns must have the same data
 str(surveys)
 ```
 
-### Challenge
+### Challenge 2.1 SHOW
 
 Based on the output of `str(surveys)`, can you answer the following questions?
 
@@ -176,7 +176,7 @@ Notice that in the `levels()` approach, three important steps occur:
 * We then access these numeric values using the underlying integers of the
   vector `f` inside the square brackets
 
-### Challenge
+### Challenge 2.2 SHOW
 
 The function `plot()` can be used to quickly create a bar plot of a factor. For instance, for the factor
 `exprmt <- factor(c("treat1", "treat2", "treat1", "treat3", "treat1", "control", "treat1", "treat2", "treat3"))`, the code `plot(exprmt)`

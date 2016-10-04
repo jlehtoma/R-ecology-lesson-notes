@@ -4,48 +4,6 @@ author:
 date:
 autosize: true
 
-Challenge 1.1
-========================================================
-
-* **Question**: We’ve seen that atomic vectors can be of type character,
-  numeric, integer, and logical. But what happens if we try to mix these types in
-  a single vector?
-<!-- * _Answer_: R implicitly converts them to all be the same type -->
-
-* **Question**: What will happen in each of these examples? (hint: use `class()`
-  to check the data type of your objects):
-
-```r
-num_char <- c(1, 2, 3, 'a')
-num_logical <- c(1, 2, 3, TRUE)
-char_logical <- c('a', 'b', 'c', TRUE)
-tricky <- c(1, 2, 3, '4')
-```
-
-* **Question**: Why do you think it happens?
-
-* **Question**: Can you draw a diagram that represents the hierarchy of the data
-  types?
-
-Challenge 1.2
-========================================================
-
-* Can you figure out why `"four" > "five"` returns `TRUE`?
-
-
-Challenge 1.3
-========================================================
-
-* **Question**: Why does the following piece of code give an error message?
-
-```r
-sample <- c(2, 4, 4, "NA", 6)
-mean(sample, na.rm = TRUE)
-```
-<!-- * _Answer_: Because R recognizes the NA in quotes as a character. -->
-
-* **Question**: Why does the error message say the argument is not numeric?
-
 Challenge 2.1
 ========================================================
 
@@ -160,10 +118,16 @@ How many individuals were caught in each `plot_type` surveyed?
 Challenge 4.4
 ========================================================
 
+Use `group_by()` and `summarize()` to find the mean, min, and max hindfoot
+length for each species (using `species _id`).
+
+Challenge 4.5
+========================================================
+
 What was the heaviest animal measured in each year? Return the columns `year`,
 `genus`, `species_id`, and `weight`.
 
-Challenge 4.5
+Challenge 4.6
 ========================================================
 
 Download a messy version of the surveys data and see how you could

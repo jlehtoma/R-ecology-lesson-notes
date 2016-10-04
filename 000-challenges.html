@@ -792,64 +792,6 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>Challenge 1.1</h3>
-<div class="slideContent" >
-<ul>
-<li><p><strong>Question</strong>: We’ve seen that atomic vectors can be of type character,
-numeric, integer, and logical. But what happens if we try to mix these types in
-a single vector?</p>
-
-<!-- * _Answer_: R implicitly converts them to all be the same type --></li>
-<li><p><strong>Question</strong>: What will happen in each of these examples? (hint: use <code>class()</code>
-to check the data type of your objects):</p></li>
-</ul>
-
-<pre><code class="r">num_char &lt;- c(1, 2, 3, &#39;a&#39;)
-num_logical &lt;- c(1, 2, 3, TRUE)
-char_logical &lt;- c(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, TRUE)
-tricky &lt;- c(1, 2, 3, &#39;4&#39;)
-</code></pre>
-
-<ul>
-<li><p><strong>Question</strong>: Why do you think it happens?</p></li>
-<li><p><strong>Question</strong>: Can you draw a diagram that represents the hierarchy of the data
-types?</p></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="linear" data-transition-speed="default">
-<h3>Challenge 1.2</h3>
-<div class="slideContent" >
-<ul>
-<li>Can you figure out why <code>&quot;four&quot; &gt; &quot;five&quot;</code> returns <code>TRUE</code>?</li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="linear" data-transition-speed="default">
-<h3>Challenge 1.3</h3>
-<div class="slideContent" >
-<ul>
-<li><strong>Question</strong>: Why does the following piece of code give an error message?</li>
-</ul>
-
-<pre><code class="r">sample &lt;- c(2, 4, 4, &quot;NA&quot;, 6)
-mean(sample, na.rm = TRUE)
-</code></pre>
-
-<!-- * _Answer_: Because R recognizes the NA in quotes as a character. -->
-
-<ul>
-<li><strong>Question</strong>: Why does the error message say the argument is not numeric?</li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="linear" data-transition-speed="default">
 <h3>Challenge 2.1</h3>
 <div class="slideContent" >
 <p>Based on the output of <code>str(surveys)</code>, can you answer the following questions?</p>
@@ -993,6 +935,15 @@ and all values are &lt; 30.</p>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Challenge 4.4</h3>
 <div class="slideContent" >
+<p>Use <code>group_by()</code> and <code>summarize()</code> to find the mean, min, and max hindfoot
+length for each species (using <code>species _id</code>).</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Challenge 4.5</h3>
+<div class="slideContent" >
 <p>What was the heaviest animal measured in each year? Return the columns <code>year</code>,
 <code>genus</code>, <code>species_id</code>, and <code>weight</code>.</p>
 
@@ -1000,7 +951,7 @@ and all values are &lt; 30.</p>
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>Challenge 4.5</h3>
+<h3>Challenge 4.6</h3>
 <div class="slideContent" >
 <p>Download a messy version of the surveys data and see how you could
 tidy it up using the tools from tidyr-package.</p>

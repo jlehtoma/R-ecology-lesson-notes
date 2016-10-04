@@ -119,7 +119,7 @@ surveys_sml
 
 Note that the final data frame is the leftmost part of this expression.
 
-> ### Challenge {.challenge}
+> ### Challenge 4.1 SHOW {.challenge}
 >
 >  Using pipes, subset the data to include individuals collected before 1995,
 >  and retain the columns `year`, `sex`, and `weight.`
@@ -168,7 +168,7 @@ surveys %>%
 `is.na()` is a function that determines whether something is or is not an `NA`.
 The `!` symbol negates it, so we're asking for everything that is not an `NA`.
 
-> ### Challenge {.challenge}
+> ### Challenge 4.2 SHOW {.challenge}
 >
 >  Create a new dataframe from the survey data that meets the following
 >  criteria: contains only the `species_id` column and a column that contains
@@ -278,7 +278,7 @@ surveys %>%
 Here, `tally()` is the action applied to the groups created by `group_by()` and
 counts the total number of records for each category.
 
-> ### Challenge {.challenge}
+> ### Challenge 4.3 {.challenge}
 >
 > How many individuals were caught in each `plot_type` surveyed?
 
@@ -291,7 +291,7 @@ surveys %>%
 ```
 --->
 
-> ### Challenge {.challenge}
+> ### Challenge 4.4 SHOW {.challenge}
 >
 > Use `group_by()` and `summarize()` to find the mean, min, and max hindfoot
 > length for each species (using `species _id`).
@@ -308,7 +308,7 @@ surveys %>%
     )
 ```
 
-> ### Challenge {.challenge}
+> ### Challenge 4.5 SHOW {.challenge}
 >
 > What was the heaviest animal measured in each year? Return the columns `year`,
 > `genus`, `species_id`, and `weight`.
@@ -391,7 +391,7 @@ species_yearly_tidy <- species_yearly_pivot %>%
   gather(year, count, -species_id) 
 ```
 
-> ### Challenge {.challenge}
+> ### Challenge 4.6 SHOW {.challenge}
 >
 > Download a messy version of the surveys data and see how you could 
 > tidy it up using the tools from tidyr-package.
