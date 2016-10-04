@@ -214,7 +214,7 @@ want from it. Row numbers come first, followed by column numbers. However, note
 that different ways of specifying these coordinates lead to results with
 different classes.
 
-```{r, purl=FALSE}
+```{r, eval=FALSE, purl=FALSE}
 surveys[1]      # first column in the data frame (as a data.frame)
 surveys[1, 1]   # first element in the first column of the data frame (as a vector)
 surveys[1, 6]   # first element in the 6th column (as a vector)
@@ -225,7 +225,7 @@ head_surveys <- surveys[1:6, ] # equivalent to head(surveys)
 ```
 
 You can also exclude certain parts of a data frame
-```{r, purl=FALSE}
+```{r, eval=FALSE, purl=FALSE}
 surveys[,-1]   #The whole data frame, except the first column
 surveys[-c(7:34786),] #equivalent to head(surveys)
 ```
