@@ -160,8 +160,8 @@ str(example_data)</code></pre>
 ##  $ animal: chr  &quot;dog&quot; &quot;cat&quot; &quot;sea cucumber&quot; &quot;sea urchin&quot;
 ##  $ feel  : chr  &quot;furry&quot; &quot;furry&quot; &quot;squishy&quot; &quot;spiny&quot;
 ##  $ weight: num  45 8 1.1 0.8</code></pre>
-<div id="challenge" class="section level3">
-<h3>Challenge</h3>
+<div id="challenge-3.1.1-show" class="section level3">
+<h3>Challenge 3.1.1 SHOW</h3>
 <ol style="list-style-type: decimal">
 <li><p>There are a few mistakes in this hand crafted <code>data.frame</code>, can you spot and fix them? Don’t hesitate to experiment!</p>
 <pre class="r"><code>author_book &lt;- data.frame(author_first=c(&quot;Charles&quot;, &quot;Ernst&quot;, &quot;Theodosius&quot;),
@@ -250,8 +250,8 @@ surveys[, &quot;species_id&quot;]     # Result is a vector
 surveys[[&quot;species_id&quot;]]     # Result is a vector
 surveys$species_id          # Result is a vector</code></pre>
 <p>For our purposes, these three notations are equivalent. However, the last one with the <code>$</code> does partial matching on the name. So you could also select the column <code>&quot;day&quot;</code> by typing <code>surveys$d</code>. It’s a shortcut, as with all shortcuts, they can have dangerous consequences, and are best avoided. Besides, with auto-completion in RStudio, you rarely have to type more than a few characters to get the full and correct column name.</p>
-<div id="challenge-1" class="section level3">
-<h3>Challenge</h3>
+<div id="challenge-3.2-show" class="section level3">
+<h3>Challenge 3.2 SHOW</h3>
 <ol style="list-style-type: decimal">
 <li><p>The function <code>nrow()</code> on a <code>data.frame</code> returns the number of rows. Use it, in conjunction with <code>seq()</code> to create a new <code>data.frame</code> called <code>surveys_by_10</code> that includes every 10th row of the survey data frame starting at row 10 (10, 20, 30, …)</p></li>
 <li><p>Create a <code>data.frame</code> containing only the observations from row 1999 of the <code>surveys</code> dataset.</p></li>

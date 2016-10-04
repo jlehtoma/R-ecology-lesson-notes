@@ -128,14 +128,12 @@ Note that the final data frame is the leftmost part of this expression.
 >  Using pipes, subset the data to include individuals collected before 1995,
 >  and retain the columns `year`, `sex`, and `weight.`
 
-<!---
 ```{r, eval=FALSE, purl=FALSE}
 ## Answer
 surveys %>%
     filter(year < 1995) %>%
     select(year, sex, weight)
 ```
---->
 
 
 ### Mutate
@@ -184,7 +182,6 @@ The `!` symbol negates it, so we're asking for everything that is not an `NA`.
 >
 >  **Hint**: think about how the commands should be ordered to produce this data frame!
 
-<!---
 ```{r, eval=FALSE, purl=FALSE}
 ## Answer
 surveys_hindfoot_half <- surveys %>%
@@ -193,7 +190,6 @@ surveys_hindfoot_half <- surveys %>%
     filter(hindfoot_half < 30) %>%
     select(species_id, hindfoot_half)
 ```
---->
 
 ### Split-apply-combine data analysis and the summarize() function
 
