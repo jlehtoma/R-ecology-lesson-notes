@@ -184,13 +184,6 @@ counts &lt;- c(50, 60, 65, 82)
 new_datarame &lt;- data.frame(colors = color, counts = counts)</code></pre></li>
 </ol>
 <p>Try making your own new data frame from some vectors. You can check the data type of the new object using <code>class()</code>.</p>
-<p><!--- Answers
-
-   
-
-   
-
-   --></p>
 <p>The automatic conversion of data type is sometimes a blessing, sometimes an annoyance. Be aware that it exists, learn the rules, and double check that data you import in R are of the correct type within your data frame. If not, use it to your advantage to detect mistakes that might have been introduced during data entry (a letter in a column that should only contain numbers for instance.).</p>
 </div>
 </div>
@@ -258,16 +251,11 @@ surveys$species_id          # Result is a vector</code></pre>
 <li><p>Notice how <code>nrow()</code> gave you the number of rows in a <code>data.frame</code>? Use <code>nrow()</code> instead of a row number to make a <code>data.frame</code> with observations from only the last row of the <code>surveys</code> dataset.</p></li>
 <li><p>Now that you’ve seen how <code>nrow()</code> can be used to stand in for a row index, let’s combine that behavior with the <code>-</code> notation above to reproduce the behavior of <code>head(surveys)</code> excluding the 7th through final row of the <code>surveys</code> dataset.</p></li>
 </ol>
-<!---
-
-```r
-## Answers
-surveys_by_10 <- surveys[seq(10, nrow(surveys), by=10), ]
-surveys_1999 <- surveys[surveys$year == 1999, ]
-surveys_last <- surveys[nrow(surveys),]
-surveys_head <- surveys[-c(7:nrow(surveys)),]
-```
---->
+<pre class="r"><code>## Answers
+surveys_by_10 &lt;- surveys[seq(10, nrow(surveys), by=10), ]
+surveys_1999 &lt;- surveys[surveys$year == 1999, ]
+surveys_last &lt;- surveys[nrow(surveys),]
+surveys_head &lt;- surveys[-c(7:nrow(surveys)),]</code></pre>
 </div>
 </div>
 

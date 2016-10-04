@@ -129,7 +129,6 @@ fix them? Don't hesitate to experiment!
    Try making your own new data frame from some vectors. You can check the data
    type of the new object using `class()`.
 
-   <!--- Answers
 
    ```{r, eval=FALSE, echo=FALSE, purl=FALSE}
    ## Answers
@@ -149,7 +148,6 @@ fix them? Don't hesitate to experiment!
    ##   intended.
    ```
 
-   -->
 
    The automatic conversion of data type is sometimes a blessing, sometimes an
    annoyance. Be aware that it exists, learn the rules, and double check that
@@ -283,7 +281,6 @@ to get the full and correct column name.
 ###   excluding the 7th through final row of the `surveys` dataset.
 ```
 
-<!---
 ```{r, purl=FALSE}
 ## Answers
 surveys_by_10 <- surveys[seq(10, nrow(surveys), by=10), ]
@@ -291,4 +288,3 @@ surveys_1999 <- surveys[surveys$year == 1999, ]
 surveys_last <- surveys[nrow(surveys),]
 surveys_head <- surveys[-c(7:nrow(surveys)),]
 ```
---->

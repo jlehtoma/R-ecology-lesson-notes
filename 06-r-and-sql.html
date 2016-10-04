@@ -179,7 +179,8 @@ JOIN table3 ON table2.key = table3.key</p></li>
 </ol>
 <p>Write a query that joins the species, plot, and survey tables together. The query should return counts of genus by plot type. Then create a bar plot of your results in R.</p>
 </blockquote>
-<pre class="r"><code>q &lt;- &quot;SELECT d.plot_type , c.genus, count(*)
+<pre class="r"><code>## Answer
+q &lt;- &quot;SELECT d.plot_type , c.genus, count(*)
 FROM
 (SELECT a.genus, b.plot_id
 FROM species a
